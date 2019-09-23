@@ -4,10 +4,10 @@ import { TranslateService } from '@ngx-translate/core';
 import * as fromI18n from '../i18n/reducers';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html'
+  selector: 'app-contact',
+  templateUrl: './contact.component.html'
 })
-export class HomeComponent implements OnInit {
+export class ContactComponent implements OnInit {
   currentLanguage$ = this.store.pipe(select(fromI18n.getCurrentLanguage));
 
   constructor(

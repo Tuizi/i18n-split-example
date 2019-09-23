@@ -5,8 +5,7 @@ import * as fromI18n from './i18n/reducers';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   currentLanguage$ = this.store.pipe(select(fromI18n.getCurrentLanguage));

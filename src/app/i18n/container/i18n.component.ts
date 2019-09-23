@@ -1,13 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
-import * as fromI18n from '../i18n/reducers';
+import * as fromI18n from '../reducers';
 
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html'
-})
-export class HomeComponent implements OnInit {
+export class I18nComponent implements OnInit {
   currentLanguage$ = this.store.pipe(select(fromI18n.getCurrentLanguage));
 
   constructor(
