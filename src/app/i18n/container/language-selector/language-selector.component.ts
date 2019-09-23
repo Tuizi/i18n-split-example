@@ -9,7 +9,7 @@ import { Language } from '../../models/language.model';
   templateUrl: './language-selector.component.html'
 })
 export class LanguageSelectorComponent implements OnInit {
-  constructor(private store: Store<fromI18n.State>) {}
+  constructor(private readonly store: Store<fromI18n.State>) {}
 
   ngOnInit() {}
 

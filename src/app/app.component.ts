@@ -1,23 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { select, Store } from '@ngrx/store';
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
+import { I18nComponent } from './i18n/container/i18n.component';
 import * as fromI18n from './i18n/reducers';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit {
-  currentLanguage$ = this.store.pipe(select(fromI18n.getCurrentLanguage));
-
+export class AppComponent extends I18nComponent {
   constructor(
-    private store: Store<fromI18n.State>,
-    private readonly translate: TranslateService
+    readonly store: Store<fromI18n.State>,
+    readonly translate: TranslateService
   ) {
-    this.translate.setDefaultLang('en');
-  }
-
-  ngOnInit(): void {
-    this.currentLanguage$.subscribe(language => this.translate.use(language));
+    super(store, translate);
   }
 }
