@@ -8,10 +8,24 @@ export interface State {
   current: Language;
 }
 
+export function navigatorLanguage(): string {
+  const lang: string = window.navigator.language.toLowerCase().split('-')[0];
+  let result = 'en';
+  switch (lang) {
+    case 'fr':
+    case 'en':
+    case 'it':
+    case 'es':
+      result = lang;
+      break;
+    default:
+      break;
+  }
+  return result;
+}
+
 export const initialState: State = {
-  current: (navigator.language.toLowerCase().startsWith('fr')
-    ? 'fr'
-    : 'en') as Language
+  current: navigatorLanguage() as Language
 };
 
 export const reducer = createReducer(
