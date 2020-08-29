@@ -1,10 +1,14 @@
-import { OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { Language } from '../models/language.model';
 import * as fromI18n from '../reducers';
 
+@Component({
+  selector: 'app-i18n',
+  template: ``
+})
 export class I18nComponent implements OnInit {
   currentLanguage$: Observable<Language>;
   translate: TranslateService;
