@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+
 import * as fromI18n from '../../reducers';
 import { LanguageActions } from '../../actions';
 import { Language } from '../../models/language.model';
@@ -11,9 +12,9 @@ import { Language } from '../../models/language.model';
 export class LanguageSelectorComponent implements OnInit {
   constructor(private readonly store: Store<fromI18n.State>) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
-  setLanguage(language: Language) {
+  setLanguage(language: Language): any {
     this.store.dispatch(LanguageActions.set({ language }));
   }
 }

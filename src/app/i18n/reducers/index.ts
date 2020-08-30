@@ -17,7 +17,7 @@ export interface State extends fromRoot.State {
   [i18nFeatureKey]: I18nState;
 }
 
-export function reducers(state: I18nState | undefined, action: Action) {
+export function reducers(state: I18nState | undefined, action: Action): any {
   return combineReducers({
     [fromLanguage.languageFeatureKey]: fromLanguage.reducer
   })(state, action);
